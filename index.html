@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>つなぐ医整｜回数券なし・事前確定総額・実来院口コミの整体検索（先行ウェイトリスト）</title>
+  <meta name="description" content="病院での診察後や慢性痛ケアに。回数券なし・事前確定総額・決済完了した実来院者だけの過去口コミ（受診背景タグつき）で選べる整体マッチング『つなぐ医整』先行登録ページ。" />
+  <!-- Google Analytics 4 を使う場合は G-XXXXXXXXXX を差し替えて有効化してください
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #e2e8f0;
+      --brand: #0f766e;
+      --brand-dark: #115e59;
+      --brand-soft: #ccfbf1;
+      --accent: #0284c7;
+      --warn-bg: #fffbeb;
+      --warn-line: #fde68a;
+      --warn-text: #92400e;
+      --radius: 14px;
+      --shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Meiryo", system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .container {
+      width: min(1040px, 92%);
+      margin: 0 auto;
+    }
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      gap: 12px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.12rem;
+      text-decoration: none;
+      color: var(--brand-dark);
+    }
+    .logo-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--brand-soft);
+      color: var(--brand-dark);
+    }
+    .nav-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      transition: transform 0.12s ease, background 0.15s ease, border-color 0.15s ease;
+      font-size: 0.95rem;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-sm { padding: 8px 14px; font-size: 0.85rem; border-radius: 8px; }
+    .btn-primary {
+      background: var(--brand);
+      color: #fff;
+    }
+    .btn-primary:hover { background: var(--brand-dark); }
+    .btn-secondary {
+      background: #fff;
+      color: var(--brand-dark);
+      border-color: var(--brand);
+    }
+    .btn-secondary:hover { background: #f0fdfa; }
+
+    /* Hero */
+    .hero {
+      padding: 48px 0 36px;
+      background: linear-gradient(180deg, #f0fdfa 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: var(--brand-soft);
+      color: var(--brand-dark);
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(1.6rem, 3.3vw, 2.35rem);
+      line-height: 1.32;
+      letter-spacing: -0.01em;
+    }
+    .hero-lead {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: clamp(0.98rem, 1.4vw, 1.08rem);
+      max-width: 760px;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+    .hero-note {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* Section */
+    section { padding: 44px 0; }
+    .section-title {
+      margin: 0 0 8px;
+      font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+      line-height: 1.35;
+    }
+    .section-sub {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* Video */
+    .video-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #0f172a;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .video-wrap video,
+    .video-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+    .v5-notice {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: var(--warn-bg);
+      border: 1px solid var(--warn-line);
+      color: var(--warn-text);
+      font-size: 0.86rem;
+    }
+
+    /* Grid cards */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+    @media (max-width: 820px) {
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+    .card-badge {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 6px;
+      background: #e0f2fe;
+      color: #0369a1;
+      margin-bottom: 10px;
+    }
+    .card-badge.teal { background: var(--brand-soft); color: var(--brand-dark); }
+    .card-badge.slate { background: #f1f5f9; color: #334155; }
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.12rem;
+    }
+    .card ul {
+      margin: 0;
+      padding-left: 1.15rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .card li + li { margin-top: 6px; }
+
+    /* Pricing highlight */
+    .price-box {
+      background: var(--surface);
+      border: 2px solid var(--brand);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+    .price-big {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--brand-dark);
+      margin: 6px 0 10px;
+    }
+
+    /* Waitlist CTA block */
+    .cta-band {
+      background: #0f172a;
+      color: #fff;
+      border-radius: 18px;
+      padding: 32px 26px;
+    }
+    .cta-band h2 { margin: 0 0 8px; font-size: 1.45rem; }
+    .cta-band p { margin: 0 0 20px; color: #cbd5e1; font-size: 0.95rem; }
+    .cta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 760px) {
+      .cta-grid { grid-template-columns: 1fr; }
+    }
+    .cta-panel {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .cta-panel h3 { margin: 0 0 6px; font-size: 1.08rem; }
+    .cta-panel p { margin: 0 0 14px; font-size: 0.88rem; color: #cbd5e1; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 44px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+    .disclaimer {
+      background: #f1f5f9;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#top">
+        <span>つなぐ医整</span>
+        <span class="logo-badge">先行ウェイトリスト</span>
+      </a>
+      <div class="nav-actions">
+        <a class="btn btn-sm btn-secondary" href="#waitlist">患者：公開通知</a>
+        <a class="btn btn-sm btn-primary" href="#waitlist">整体院：先行登録（無料）</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <span class="hero-tag">1駅先行パイロット準備中｜初期0円・月額基本0円</span>
+        <h1>回数券なし・事前確定総額・実来院者だけの口コミで選べる<br />医療配慮型の整体検索「つなぐ医整」</h1>
+        <p class="hero-lead">
+          「病院で様子見と言われたけれど、どの整体に行けばいいか分からない」「密室での高額回数券やサクラ口コミが怖い」——。<br />
+          つなぐ医整は、<strong>国家資格等の有資格院 × 回数券全面禁止 × 事前オンライン決済 × 実来院者のリアルな過去口コミ（受診背景タグつき）</strong>を揃えた、新しい地域整体プラットフォームです。
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#waitlist">整体院：先行パートナー登録（0円）</a>
+          <a class="btn btn-secondary" href="#waitlist">患者：公開お知らせ＆要望登録</a>
+          <a class="btn btn-secondary" href="#video">紹介動画を見る（約2分）</a>
+        </div>
+        <div class="hero-note">
+          ※現在は1駅先行テスト（Step 0）に向けた先行ウェイトリスト受付中です。登録・通知に費用は一切かかりません。
+        </div>
+      </div>
+    </section>
+
+    <!-- Video -->
+    <section id="video">
+      <div class="container">
+        <h2 class="section-title">2分でわかる「つなぐ医整」の仕組み</h2>
+        <p class="section-sub">現状の課題・サービスの流れ・導入後のイメージを動画でまとめています。</p>
+        <div class="video-card">
+          <div class="video-wrap">
+            <!-- YouTube埋め込み（無料公開用） -->
+            <iframe
+              src="https://www.youtube.com/embed/KjK0RxDv1PU?rel=0"
+              title="つなぐ医整 紹介動画"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="v5-notice">
+            <strong>【最新仕様（v5.0）補足】</strong>
+            動画内の一部表現から先行募集条件をさらに改善しました。現在の整体院向け条件は<strong>「初期0円・月額基本0円・初回新規実来院CPA 4,500円（2回目以降手数料0%・自院予約制限なし）」</strong>、クリニック向けは<strong>「待合室ポスター掲示のみ（医師の診察室手渡しなし・対価0円）」</strong>です。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 Audiences -->
+    <section>
+      <div class="container">
+        <h2 class="section-title">3者それぞれの安心とメリット</h2>
+        <p class="section-sub">患者・有資格の個人整体院・近隣クリニックの誰にも無理が出ない構造で設計しています。</p>
+        <div class="grid-3">
+          <div class="card">
+            <span class="card-badge teal">患者さまへ</span>
+            <h3>回数券もサクラもなし。<br />総額とリアル口コミで選べる</h3>
+            <ul>
+              <li><strong>事前確定総額</strong>：予約前に初回・2回目以降の支払総額を明示（当日追加請求0円）</li>
+              <li><strong>回数券・物販営業を全面禁止</strong>：1回ごとの都度払い限定</li>
+              <li><strong>実来院者だけの口コミ</strong>：事前決済して来院した人だけが投稿可能。受診背景（病院名・診察名タグ※任意）や部位で検索可能</li>
+              <li><strong>見送り時0円返金</strong>：危険兆候がある場合は施術せず100%返金＋受診案内メモを交付</li>
+            </ul>
+          </div>
+          <div class="card">
+            <span class="card-badge">個人有資格の整体院へ</span>
+            <h3>固定費0円で集客。<br />初月赤字リスクゼロ</h3>
+            <ul>
+              <li><strong>初期0円・月額基本0円</strong>：新規来院がなければ請求0円</li>
+              <li><strong>初回新規CPA 4,500円/件のみ</strong>：8,000円施術なら1人目から黒字。2回目以降の手数料は0%</li>
+              <li><strong>自院LINE等の制限なし</strong>：中抜き禁止規約なし。検索順位は初回来院後の3指標評価＋利便性で公平決定</li>
+              <li><strong>任意SaaS（月3,980円）</strong>：30秒経過メモ・自動リマインド・電子領収書（希望院のみ）</li>
+            </ul>
+          </div>
+          <div class="card">
+            <span class="card-badge slate">整形外科・クリニックへ</span>
+            <h3>対価ゼロ・業務ゼロ。<br />非提携の中立情報掲示板</h3>
+            <ul>
+              <li><strong>紹介料・バーター・受付消込なし</strong>：療担規則・医療法に配慮した完全非提携</li>
+              <li><strong>医師の診察室手渡しなし</strong>：待合室ポスター掲示（自由撤去・破棄OK）のみ</li>
+              <li><strong>経過サマリー出力</strong>：患者が次回来院時に持参できる本人用メモで問診負担を軽減</li>
+              <li><strong>病院評価禁止＆実名マスク</strong>：病院への批判記述は禁止し、要請時は「近隣の整形外科」へ即時マスク</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing & Wedge -->
+    <section>
+      <div class="container">
+        <div class="grid-2">
+          <div class="price-box">
+            <span class="card-badge">整体院 先行パートナー枠（1駅5〜8院限定スタート）</span>
+            <h3>料金体系（v5.0 仮説・テスト募集）</h3>
+            <div class="price-big">初期 0円 ／ 月額基本 0円<br />初回新規実来院 4,500円/件</div>
+            <ul style="margin:0; padding-left:1.15rem; color:var(--muted); font-size:0.92rem;">
+              <li>対象：PT / OT / 柔整 / あはき / WHO基準カイロ / JSPO-AT 等の有資格院（7,000〜9,000円帯推奨）</li>
+              <li>2回目以降の決済手数料：0%（Stripe Direct Charges）</li>
+              <li>危険兆候による見送り時：患者0円返金＋当該CPA 0円＋次回CPAから2,000円控除補填</li>
+              <li>立ち上げ期は1駅5〜8院から開始し、需要に応じて段階開放</li>
+            </ul>
+          </div>
+          <div class="card">
+            <span class="card-badge teal">現在のステータス（Step 0：現場検証中）</span>
+            <h3>公開までのステップ</h3>
+            <ul>
+              <li><strong>Step 1（いまここ）</strong>：仮設LP＋Googleフォームで先行希望エリア（駅名）と整体院・患者の事前登録を受付</li>
+              <li><strong>Step 2</strong>：登録が揃った1駅エリアで手動MVP（事前決済・実来院口コミ）を先行テスト</li>
+              <li><strong>Step 3</strong>：医療法務弁護士の最終確認を経て、先行エリアから順次本公開</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Waitlist CTA -->
+    <section id="waitlist">
+      <div class="container">
+        <div class="cta-band">
+          <h2>先行ウェイトリストに登録する（無料・約1分）</h2>
+          <p>Googleフォームが開きます。準備が整ったエリアから順にご案内をお送りします。</p>
+          <div class="cta-grid">
+            <div class="cta-panel">
+              <h3>整体院・施術院の方（先行パートナー登録）</h3>
+              <p>1駅5〜8院の先行枠をご案内します。フォーム内で希望料金体系のご意見もお聞かせください。</p>
+              <!-- 整体院用 Google Form -->
+              <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSchDi1mpDNPrFbXmZFyi3c6PoICVkjQEMMO_SppXEA7vH8yyQ/viewform" target="_blank" rel="noopener noreferrer">
+                整体院ウェイトリストへ登録 →
+              </a>
+            </div>
+            <div class="cta-panel">
+              <h3>患者・利用を検討中の方（公開通知＆アンケート）</h3>
+              <p>利用したい駅名・お悩み・診察名などを登録すると、該当エリア公開時に優先してお知らせします。</p>
+              <!-- 患者用 Google Form -->
+              <a class="btn btn-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSf-USpDG5lA_pZYOsRtfUpOiPaMiUxmvxlHLfYHQYvE9cd3Zg/viewform" target="_blank" rel="noopener noreferrer">
+                患者ウェイトリストへ登録 →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="disclaimer">
+        <strong>【ご注意・免責事項】</strong>
+        本サービス「つなぐ医整」は、登録施術院の予約・事前決済・実来院者による体験記録の検索基盤であり、医療機関との提携・特定の施術所または治療効果の保証・医療行為（診断や治療）を行うものではありません。検索上の「診察名タグ」は利用者の自己申告による受診背景の参考情報であり、施術院による適応症の標榜ではありません。現在、医師の診断・リハビリを継続中の方は、必ず主治医にご相談のうえご利用ください。
+      </div>
+      <div>© 2026 つなぐ医整（準備事務局）｜先行テスト・ウェイトリスト仮設ページ</div>
+    </div>
+  </footer>
+</body>
+</html>
