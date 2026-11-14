@@ -38,8 +38,10 @@
       margin: 0 auto;
     }
     .pc-only { display: inline; }
+    .sp-only-hint { display: none; font-size: 0.78rem; color: var(--muted); margin: 0 0 8px; text-align: right; }
     @media (max-width: 640px) {
       .pc-only { display: none; }
+      .sp-only-hint { display: block; }
     }
 
     /* Header (1行固定・モバイル56px以内) */
@@ -657,7 +659,7 @@
                 allowfullscreen>
               </iframe>
             </div>
-            <p class="video-caption">※動画はイメージです。現在はご希望の多い駅エリアから順次オープン準備を進めています。</p>
+            <p class="video-caption">※動画では患者さま・整体院・医療機関それぞれの仕組みをまとめてご紹介しています（現在はご希望の多い駅エリアから順次オープン準備中です）。</p>
           </div>
         </div>
       </section>
@@ -703,8 +705,8 @@
             </a>
             <div class="cta-micro">
               <span>✓ 完全無料</span>
-              <span>✓ 営業メールなし</span>
-              <span>✓ いつでも配信停止OK</span>
+              <span>✓ 公開案内1通のみ（メルマガなし）</span>
+              <span>✓ 営業電話なし</span>
             </div>
           </div>
         </div>
@@ -764,6 +766,7 @@
         <div class="container">
           <h2 class="section-title">従来の予約サイトとの違い</h2>
           <p class="section-sub">1人自費整体院でも無理なく黒字化できる設計にしています。</p>
+          <p class="sp-only-hint">← 左右にスクロールして比較できます →</p>
           <div class="table-wrap">
             <table>
               <thead>
@@ -819,7 +822,7 @@
             <div class="card">
               <div class="step-num">2</div>
               <h3>先行エリア決定・オンライン確認</h3>
-              <p>ご希望エリアの準備が整い次第ご連絡します。動画受講・本人確認・資格証確認のみで掲載開始。</p>
+              <p>ご希望エリアの準備が整い次第ご連絡します。ルール説明動画（15分程度）の確認・本人確認・資格証確認のみで掲載開始。</p>
             </div>
             <div class="card">
               <div class="step-num">3</div>
@@ -917,7 +920,7 @@
     <div class="container">
       <div class="disclaimer">
         <strong>【ご注意・免責事項】</strong>
-        本サービス「つなぐ医整」は、登録施術院の予約・事前決済・実来院者による体験記録の検索基盤であり、特定の医療機関との提携・治療効果の保証・医療行為（診断や治療）を行うものではありません。現在、医師の診察やリハビリを継続中の方は、必ず主治医にご相談のうえご利用ください。
+        本サービス「つなぐ医整」は、登録施術院の予約・事前決済・実来院者による体験記録の検索基盤であり、特定の医療機関との提携・治療効果の保証・医療行為（診断や治療）を行うものではありません。検索上の「診察名・症状タグ」は利用者の自己申告による体験記録の参考情報であり、施術院による適応症の広告・保証ではありません。現在、医師の診察やリハビリを継続中の方は、必ず主治医にご相談のうえご利用ください。
       </div>
       <div class="footer-links">
         <div>© 2026 つなぐ医整 運営準備室（お問い合わせは各登録フォーム備考欄より受け付けています）</div>
@@ -950,11 +953,19 @@
           footerSwitchBtn.textContent = '整体を探している方向けページを見る';
           headerCtaBtn.textContent = '無料仮登録';
           headerCtaBtn.setAttribute('href', '#seitai-register');
+          document.title = 'つなぐ医整｜初期・月額0円の地域整体プラットフォーム（整体院さま向け）';
         } else {
           headerSwitchBtn.textContent = '整体院の先生はこちら →';
           footerSwitchBtn.textContent = '整体院の先生向けページを見る';
           headerCtaBtn.textContent = '公開通知を受け取る';
           headerCtaBtn.setAttribute('href', '#patient-register');
+          document.title = 'つなぐ医整｜回数券なし・料金が事前にわかる地域の整体さがし';
+        }
+
+        if (window.history && window.history.replaceState) {
+          var url = new URL(window.location.href);
+          url.searchParams.set('role', isSeitai ? 'seitai' : 'patient');
+          window.history.replaceState(null, '', url.toString());
         }
 
         if (scrollTop) {
